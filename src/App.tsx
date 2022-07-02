@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import { useEffect } from "react";
 import { client } from "./lib/apollo";
 
@@ -12,11 +12,9 @@ const GET_LESSONS_QUERY = gql`
 `;
 
 function App() {
-  useEffect(() => {
-    client.query({
-      query: GET_LESSONS_QUERY,
-    });
-  }, []);
+  const { data } = useQuery(GET_LESSONS_QUERY)
+
+  console.log(data;)
 
   return (
     <h1 className="text-5xl font-bold text-red-valorant">
