@@ -11,15 +11,22 @@ const GET_LESSONS_QUERY = gql`
   }
 `;
 
-function App() {
-  const { data } = useQuery(GET_LESSONS_QUERY)
+interface Lesson {
+  id: string;
+  title: string;
+}
 
-  console.log(data;)
+function App() {
+  const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
+
+  console.log(data);
 
   return (
-    <h1 className="text-5xl font-bold text-red-valorant">
-      Hello Valorant Agents
-    </h1>
+    <ul>
+      {data?.lessons.map((lesson) => {
+        return <li key={lesson.id}>{lesson.title}</li>;
+      })}
+    </ul>
   );
 }
 
