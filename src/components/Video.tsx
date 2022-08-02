@@ -114,7 +114,8 @@ export function Video(props: VideoProps) {
 
         <div className="gap-8 mt-20 grid grid-cols-2">
           <a
-            href="#"
+            href="https://docs.google.com/document/d/1PAKnJzkAT8x4sD73a0XatOpA0uh8MDAdAPlQzggv0lg/edit"
+            target="_blank"
             className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
           >
             <div className="bg-green-700 h-full p-6 flex items-center">
